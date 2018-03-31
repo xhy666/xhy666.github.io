@@ -1,0 +1,21 @@
+.list-group-item:hover{
+	background:lightgreen;
+}
+img{
+	display:block;
+	max-width:100%;
+	max-height:100%;
+}
+.title{
+	font-size: 30px;
+}
+.title:hover{
+	text-decoration: none;
+}
+.info{
+	font-size:20px;
+	color:#888888;
+}
+.jumbotron p{
+	font-size:20px;
+}
