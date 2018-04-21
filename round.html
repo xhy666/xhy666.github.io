@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>我是一个圆</title>
+		<link rel="stylesheet" href="div.css" />
+	</head>
+	<body>
+		<div id="circle" class="round" style="display: flex;margin: auto;">	
+			<div id="circle1" class="round" style="display: flex;margin:auto;"> 
+				<div id="circle2" class="round" style="display: flex;margin:auto;"> 
+					<div id="circle3" class="round" style="display: flex;margin:auto;">
+						<div id="circle4" class="round" style="display: flex;margin:auto;" >
+							 
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<button id="stop" onclick="s();">Stop</button>
+		<button id="continue" onclick="c();">Continue</button>
+		<script>
+			var i = 0;
+			var a;
+			
+			function ce(){
+				a = setInterval(function() {
+					circle.style.transform = "rotate(" + i + "deg)";
+					i = i + 1;
+					}, 10)
+			}			
+			
+			function s(){
+				clearInterval(a);
+			}
+			
+			function c(){
+				ce();
+			}
+			
+			var b,d,f;
+			setInterval(function(){
+				b = parseInt(Math.random()*256);
+				d = parseInt(Math.random()*256);
+				f = parseInt(Math.random()*256);
+				circle.style.background = "rgb("+b+","+d+","+f+")";
+			},1000)
+			
+			var g,h,j,k,l;
+			setInterval(function(){
+				g = parseInt(Math.random()*50);
+				h = parseInt(Math.random()*20);
+				j = parseInt(Math.random()*256);
+				k = parseInt(Math.random()*256);
+				l = parseInt(Math.random()*256);
+				circle.style.boxShadow = "0px 0px "+g+"px "+h+"px rgb("+l+","+j+","+k+")";
+			},1000)
+			var n = 1;
+			setInterval(function(){
+				if(n<=10){
+					circle4.style.width=n+"px";
+					circle4.style.height=n+"px";
+				}else if(n<=75){
+					circle3.style.width=n+"px";
+					circle3.style.height=n+"px";
+				}else if(n<=125){
+					circle2.style.width=n+"px";
+					circle2.style.height=n+"px";
+				}else if(n<=175){
+					circle1.style.width=n+"px";
+					circle1.style.height=n+"px";
+				}else if(n<=225){
+					circle.style.width=n+"px";
+					circle.style.height=n+"px";
+				}else{
+					n=10;
+				}
+				n++;
+			},100)
+			
+		</script>
+	</body>
+</html>
